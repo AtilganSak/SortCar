@@ -21,7 +21,7 @@ namespace PathSystem
         {
             pathStartPoint.UpdatePath();
             pathStartPoint.rightPath[pathStartPoint.positions.Length - 1].isAvailable = false;
-            transform.DOPath(pathStartPoint.positions, duration, PathType.Linear).SetEase(animation).OnComplete(
+            transform.DOPath(pathStartPoint.positions, duration, PathType.CatmullRom,PathMode.Full3D).SetEase(animation).SetLookAt(0).OnComplete(
                 () => pathStartPoint.rightPath[pathStartPoint.rightPath.Count - 1].onCarHere.Invoke());
         }
     }

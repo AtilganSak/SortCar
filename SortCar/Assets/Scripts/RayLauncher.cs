@@ -20,15 +20,23 @@ public class RayLauncher : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out raycastHit, buttonLayer))
-                {
-                    TriggerButton triggerButton = raycastHit.collider.GetComponent<TriggerButton>();
-                    if (triggerButton != null)
-                    {
-                        triggerButton.ButtonDown();
-                    }
-                }
+                ThrowRay(touch.position);
+            }
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            ThrowRay(Input.mousePosition);
+        }
+    }
+    private void ThrowRay(Vector3 screenPosition)
+    {
+        Ray ray = camera.ScreenPointToRay(screenPosition);
+        if (Physics.Raycast(ray, out raycastHit, buttonLayer))
+        {
+            TriggerButton triggerButton = raycastHit.collider.GetComponent<TriggerButton>();
+            if (triggerButton != null)
+            {
+                triggerButton.ButtonDown();
             }
         }
     }

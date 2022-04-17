@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class TrafficController : MonoBehaviour
 {
-    private PathFollower[] cars;
+    public PathFollower[] cars;
 
     public int currentIndex;
 
