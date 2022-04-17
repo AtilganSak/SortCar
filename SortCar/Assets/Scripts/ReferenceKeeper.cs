@@ -10,6 +10,7 @@ public class ReferenceKeeper : MonoBehaviour
             return instance;
         } }
 
-    public Door purpleDoor;
-    public Door yellowDoor;
+    public GameManager GameManager;
+    public TrafficController purpleTrafficController;
+    public TrafficController yellowTrafficController;
 }

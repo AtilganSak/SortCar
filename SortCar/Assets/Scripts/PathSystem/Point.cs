@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +5,10 @@ namespace PathSystem
 {
     public class Point : MonoBehaviour
     {
+        public Team team;
         public bool isAvailable = true;
         public bool isLinkPoint;
-
+        public DOScale tick;
         public UnityEvent onCarHere;
         public Point previousPoint;
         public Point[] nextPoints;
@@ -38,6 +36,19 @@ namespace PathSystem
                 }
             }
             return null;
+        }
+        public void CarHere(PathFollower pathFollower)
+        {
+            onCarHere.Invoke();
+            if (pathFollower.team == this.team)
+            {
+                tick.DO();
+                pathFollower.Done();
+            }
+            else if(team != Team.None)
+            {
+                ReferenceKeeper.Instance.GameManager.GameOver();
+            }
         }
         private void OnDrawGizmos()
         {

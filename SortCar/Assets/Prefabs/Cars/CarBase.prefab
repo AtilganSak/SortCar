@@ -49,6 +49,7 @@ MonoBehaviour:
   duration: 2
   startDuration: 1
   animation: 4
+  tick: {fileID: 0}
   startPoint: {fileID: 0}
   pathStartPoint: {fileID: 0}
 --- !u!114 &6501351250808898315

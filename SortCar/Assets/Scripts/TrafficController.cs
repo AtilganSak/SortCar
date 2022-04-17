@@ -1,18 +1,22 @@
-using System.Collections;
+using PathSystem;
 using System.Collections.Generic;
 using UnityEngine;
-using PathSystem;
-using UnityEngine.Events;
+using System.Linq;
 
 public class TrafficController : MonoBehaviour
 {
-    public PathFollower[] cars;
+    public Team team;
 
-    public int currentIndex;
+    public PathFollower[] cars { get; private set; }
+    private int currentIndex;
 
     private void OnEnable()
     {
         cars = GetComponentsInChildren<PathFollower>();
+
+        SetTeams();
+
+        ActionManager.Instance.AddListener(Actions.GameStart, () => NextCar());
     }
     private void Update()
     {
@@ -31,6 +35,16 @@ public class TrafficController : MonoBehaviour
         if (currentIndex < cars.Length)
         {
             cars[currentIndex].GoStart();
+        }
+    }
+    private void SetTeams()
+    {
+        if (cars != null)
+        {
+            foreach (PathFollower item in cars)
+            {
+                item.SetTeam(team);
+            }
         }
     }
 }
