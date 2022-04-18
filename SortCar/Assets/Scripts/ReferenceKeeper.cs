@@ -13,4 +13,12 @@ public class ReferenceKeeper : MonoBehaviour
     public GameManager GameManager;
     public TrafficController purpleTrafficController;
     public TrafficController yellowTrafficController;
+
+    [SerializeField] LevelSettings levelSettings;
+    public LevelSettings LevelSettings { get
+        {
+            if (levelSettings == null)
+                levelSettings = Resources.Load<LevelSettings>("LevelSettings");
+            return levelSettings;
+        } }
 }

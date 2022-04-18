@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948681768461695037}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 1718336945187600017, guid: e707d6ece7896aa4ea8a9387cea4cc60, type: 3}
     - target: {fileID: 4199009272792671480, guid: 2d2a494aa7040fd4c86cd25212b364cd, type: 3}
       propertyPath: m_Name
-      value: PurpleCar_2
+      value: CarVariant_2
       objectReference: {fileID: 0}
     - target: {fileID: 8770361736638620582, guid: 2d2a494aa7040fd4c86cd25212b364cd, type: 3}
       propertyPath: m_RootOrder

@@ -13,6 +13,15 @@ namespace PathSystem
         public Point previousPoint;
         public Point[] nextPoints;
 
+        private void OnEnable()
+        {
+            tick = GetComponentInChildren<DOScale>();
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = ReferenceKeeper.Instance.LevelSettings.GetColorByTeam(team);
+            }
+        }
         public Point GetAvailableNextPoint()
         {
             if (nextPoints != null && nextPoints.Length > 0)

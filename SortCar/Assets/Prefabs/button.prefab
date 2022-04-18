@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 884032949}
   - component: {fileID: 4331341356440025725}
   m_Layer: 6
-  m_Name: Button
+  m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 6063570681043105248}
   - component: {fileID: 984965450467605415}
   - component: {fileID: 1075873075}
+  - component: {fileID: 7554694968760139472}
   m_Layer: 0
   m_Name: ChamferCyl001
   m_TagString: Untagged
@@ -311,3 +312,17 @@ MonoBehaviour:
   startValue: {x: -0.067254774, y: 0, z: -0.004484135}
   endValue: {x: -0.067254774, y: -0.37, z: -0}
   local: 1
+--- !u!114 &7554694968760139472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643900478354787752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701c7ea2555ac5244a144c0cd8d14d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  materialIndex: 0

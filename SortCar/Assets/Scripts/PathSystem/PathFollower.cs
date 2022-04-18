@@ -31,12 +31,26 @@ namespace PathSystem
             MeshRenderer meshRenderer = GetComponentInChildren<MeshRenderer>();
             if (meshRenderer)
             {
-                meshRenderer.materials[0].color = Utility.GetColorByTeam(team);
+                meshRenderer.materials[0].color = ReferenceKeeper.Instance.LevelSettings.GetColorByTeam(_team);
             }
         }
         public void Done()
         {
             ReferenceKeeper.Instance.GameManager.CarIsDone();
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                PathFollower pathFollower = other.GetComponent<PathFollower>();
+                if (pathFollower != null)
+                {
+                    if (pathFollower.team != team)
+                    {
+                        ReferenceKeeper.Instance.GameManager.GameOver();
+                    }
+                }
+            }
         }
     }
 }
