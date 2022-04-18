@@ -1,0 +1,3 @@
+Level Tasarımı:
+	Levelı oluşturacak modellerin hepsi parça parça elimizide bulunacak. Örnek olarak düz bir yol parçası, köşe parçası, yol ayrımları gibi parçaların hepsi ayrı ayrı projeye atılacak. Bu parçaları bir sistem yardımıyla random olarak mantıklı bir şekilde birleştiricez.
+Parçalar birleştikden sonra geriye pathi oluşturmak kalıyor. Bunun için daha önceden her bir parçanın üzerindeki noktalar oluşturulmalı. Bütün parçaların birleşme sırasına görede pathi oluşturacak noktaların birbirine bağlanması gerek. Bu arada sahnede araçlar her zaman aynı yerde kalıcak(tabi kendi içinde mix olabilir). Sadece yol generic olarak değişecek. Pathin araçlar ile bağlanması içinse sadece start pointleri belirlemek yeterli.
