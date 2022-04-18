@@ -17,6 +17,8 @@ public class Door : MonoBehaviour
         {
             meshRenderer.materials[1].color = ReferenceKeeper.Instance.LevelSettings.GetColorByTeam(team);
         }
+        doRotate.duration = ReferenceKeeper.Instance.LevelSettings.doorDuration;
+        doRotate.ease = ReferenceKeeper.Instance.LevelSettings.doorAnimation;
     }
     [EasyButtons.Button]
     public void Open()

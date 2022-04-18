@@ -14,6 +14,12 @@ namespace PathSystem
         [SerializeField] Point startPoint;
         [SerializeField] PathStartPoint pathStartPoint;
 
+        private void Start()
+        {
+            duration = ReferenceKeeper.Instance.LevelSettings.carDuration;
+            animation = ReferenceKeeper.Instance.LevelSettings.carAnimation;
+            startDuration = ReferenceKeeper.Instance.LevelSettings.startPointDuration;
+        }
         public void GoStart()
         {
             transform.DOMove(startPoint.transform.position, startDuration).SetEase(animation).OnComplete(() => startPoint.CarHere(this));

@@ -1608,7 +1608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 685748696}
   m_Layer: 0
-  m_Name: Grids
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2280,6 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
+  cars: []
 --- !u!4 &807728917
 Transform:
   m_ObjectHideFlags: 0
@@ -3446,6 +3447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 2
+  cars: []
 --- !u!4 &1332005663
 Transform:
   m_ObjectHideFlags: 0
@@ -4071,6 +4073,8 @@ MonoBehaviour:
   GameManager: {fileID: 889930178}
   purpleTrafficController: {fileID: 807728916}
   yellowTrafficController: {fileID: 1332005662}
+  purpleDoor: {fileID: 1891554038}
+  yellowDoor: {fileID: 888348866}
   levelSettings: {fileID: 0}
 --- !u!4 &1643397388
 Transform:

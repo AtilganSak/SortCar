@@ -15,6 +15,7 @@ public class TrafficController : MonoBehaviour
         cars = GetComponentsInChildren<PathFollower>();
 
         SetTeams();
+        MixCars();
 
         ActionManager.Instance.AddListener(Actions.GameStart, () => NextCar());
     }
@@ -45,6 +46,26 @@ public class TrafficController : MonoBehaviour
             {
                 item.SetTeam(team);
             }
+        }
+    }
+    private void MixCars()
+    {
+        if (ReferenceKeeper.Instance.LevelSettings.mixOnStart)
+        {
+            PathFollower[] pathFollowers = new PathFollower[cars.Length];
+            cars.CopyTo(pathFollowers, 0);
+            for (int i = 0; i < cars.Length; i++)
+            {
+                int rnd = Random.Range(0, cars.Length);
+                Vector3 pos = cars[i].transform.localPosition;
+                cars[i].transform.localPosition = cars[rnd].transform.localPosition;
+                cars[rnd].transform.localPosition = pos;
+                PathFollower cache = cars[i];
+                cars[i] = cars[rnd];
+                cars[rnd] = cache;
+            }
+            Vector3 doorPosition = team == Team.Team1 ? ReferenceKeeper.Instance.purpleDoor.transform.position : ReferenceKeeper.Instance.yellowDoor.transform.position;
+            cars = cars.OrderBy(x => Vector3.Distance(x.transform.position, doorPosition)).ToArray();
         }
     }
 }

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamColors:
   - team: 1
-    color: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
+    color: {r: 0.9433962, g: 0.6032251, b: 0.07564971, a: 1}
   - team: 2
-    color: {r: 0.9528302, g: 0.9414836, b: 0.1033731, a: 1}
+    color: {r: 0.077162705, g: 0.80007255, b: 0.9622642, a: 1}
+  carDuration: 2
+  carAnimation: 4
+  startPointDuration: 1
+  mixOnStart: 1
+  doorDuration: 0.3
+  doorAnimation: 1

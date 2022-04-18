@@ -13,6 +13,8 @@ public class ReferenceKeeper : MonoBehaviour
     public GameManager GameManager;
     public TrafficController purpleTrafficController;
     public TrafficController yellowTrafficController;
+    public Door purpleDoor;
+    public Door yellowDoor;
 
     [SerializeField] LevelSettings levelSettings;
     public LevelSettings LevelSettings { get
