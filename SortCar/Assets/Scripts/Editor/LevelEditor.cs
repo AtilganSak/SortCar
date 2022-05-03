@@ -154,7 +154,7 @@ public class LevelEditor : EditorWindow
         if (levelSettings != null)
         {
             EditorUtility.SetDirty(levelSettings);
-            AssetDatabase.SaveAssetIfDirty(levelSettings);
+            AssetDatabase.SaveAssets();
         }
     }
     private void ResetSettings()
